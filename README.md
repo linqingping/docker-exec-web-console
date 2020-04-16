@@ -10,10 +10,11 @@ You can launch the container in this way:
 docker run \
 	--name docker-exec-web-console \
 	-p 9999:8888 \
+	-e "CONTEXT_PATH=/"\
 	-v /var/run/docker.sock:/var/run/docker.sock \
 	bitbull/docker-exec-web-console
 ```
-
+不加-e "CONTEXT_PATH=/"　出现重定向失败
 Then you can reach the console at the url `http://localhost:9999`
 
 It's possible to pass a context path to which the container will responds, using `CONTEXT_PATH` environment variable:
