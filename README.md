@@ -7,7 +7,7 @@ The container use `socat` to bound Docker socket to a TCP port, so that I could 
 You can launch the container in this way:
 
 ```
-docker run \
+docker run -id \
 	--name docker-exec-web-console \
 	-p 9999:8888 \
 	-e "CONTEXT_PATH=/"\
@@ -20,7 +20,7 @@ Then you can reach the console at the url `http://localhost:9999`
 It's possible to pass a context path to which the container will responds, using `CONTEXT_PATH` environment variable:
 
 ```
-docker run \
+docker run -id \
 	--name docker-exec-web-console \
 	-p 9999:8888 \
 	-e "CONTEXT_PATH=/webconsole" \
